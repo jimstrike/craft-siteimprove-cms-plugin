@@ -2,7 +2,7 @@
     "name": "jimstrike/craft-siteimprove-cms-plugin",
     "description": "Siteimprove CMS Plugin",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",
@@ -40,8 +40,8 @@
         "name": "Siteimprove CMS Plugin",
         "description": "The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. Thanks to the seamless integration, you are now able to put your Siteimprove results to use where they are most valuable - during your content creation and editing process.",
         "changelogUrl": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/blob/master/CHANGELOG.md",
-        "version": "1.0.0",
-        "schemaVersion": "1.0.0",
+        "version": "1.0.1",
+        "schemaVersion": "1.0.1",
         "developer": "Dhimiter Karalliu",
         "documentationUrl": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/blob/master/README.md"
     }

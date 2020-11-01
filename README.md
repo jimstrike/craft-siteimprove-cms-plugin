@@ -49,7 +49,7 @@ cd /path/to/my/craft-project
 composer require jimstrike/siteimprove-cms-plugin
 
 # Tell Craft to install the plugin
-./craft install/plugin siteimprove
+./craft plugin/install siteimprove
 ```
 
 ## Using "Siteimprove CMS Plugin" on your site
