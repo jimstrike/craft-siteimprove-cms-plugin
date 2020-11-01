@@ -1,0 +1,7 @@
+{
+  "siteimprove/runtime.js": "/cpresources/dist/siteimprove/runtime.js",
+  "siteimprove/siteimprove.js": "/cpresources/dist/siteimprove/siteimprove.js",
+  "siteimprove/token_fetcher.css": "/cpresources/dist/siteimprove/token_fetcher.css",
+  "siteimprove/token_fetcher.js": "/cpresources/dist/siteimprove/token_fetcher.js",
+  "siteimprove/images/icon.svg": "/cpresources/dist/siteimprove/images/icon.svg"
+}

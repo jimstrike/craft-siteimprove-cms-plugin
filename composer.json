@@ -1,0 +1,48 @@
+{
+    "name": "jimstrike/craft-siteimprove-cms-plugin",
+    "description": "Siteimprove CMS Plugin",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "siteimprove",
+        "seo",
+        "accessibility",
+        "siteimprove-cms-plugin",
+        "yii2"
+    ],
+    "support": {
+        "email": "jimstrike+siteimprove@gmail.com",
+        "docs": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/blob/master/README.md",
+        "source": "https://github.com/jimstrike/craft-siteimprove-cms-plugin",
+        "issues": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dhimiter Karalliu",
+            "homepage": "https://github.com/jimstrike/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "jimstrike\\siteimprove\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "siteimprove",
+        "name": "Siteimprove CMS Plugin",
+        "description": "The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. Thanks to the seamless integration, you are now able to put your Siteimprove results to use where they are most valuable - during your content creation and editing process.",
+        "changelogUrl": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/blob/master/CHANGELOG.md",
+        "version": "1.0.0",
+        "schemaVersion": "1.0.0",
+        "developer": "Dhimiter Karalliu",
+        "documentationUrl": "https://github.com/jimstrike/craft-siteimprove-cms-plugin/blob/master/README.md"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "entrypoints": {
+    "token_fetcher": {
+      "js": [
+        "/cpresources/dist/siteimprove/runtime.js",
+        "/cpresources/dist/siteimprove/token_fetcher.js"
+      ],
+      "css": [
+        "/cpresources/dist/siteimprove/token_fetcher.css"
+      ]
+    },
+    "siteimprove": {
+      "js": [
+        "/cpresources/dist/siteimprove/runtime.js",
+        "/cpresources/dist/siteimprove/siteimprove.js"
+      ]
+    }
+  }
+}

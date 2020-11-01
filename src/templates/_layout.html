@@ -1,0 +1,63 @@
+{##
+ # "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ #
+ # Siteimprove data right where you need it.
+ # The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
+ # Thanks to the seamless integration, you are now able to put your Siteimprove results to use where 
+ # they are most valuable - during your content creation and editing process.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) Dhimiter Karalliu
+ #}
+{% extends "_layouts/cp.html" %}
+
+{% block actionButton %}{% endblock %}
+
+{% set crumbs = [
+    { label: plugin.name, url: url('siteimprove') }
+] %}
+
+{% set bodyClass = "ns-#{plugin.handle}" %}
+
+{% block content %}{% endblock %}
+
+{% block sidebar %}
+    <nav>
+        <ul>
+            <li class="heading"><span>{{ 'subnav.settings.heading'|t('siteimprove') }}</span></li>
+            {% for site in craft.app.sites.allSites %}
+                <li>
+                    <a{{ selectedSubnavItem == 'settings' and site.handle == currentSite.handle ? ' class="sel"' : '' }} href="{{ url('siteimprove/settings', { 'site': site.handle }) }}">
+                        <span class="status {{ plugin.settings.getEnabled(site.id) ? 'green' : 'red' }}"></span>
+                        <span class="label">{{ site.name }}</span>
+                        {{ _self.badge(site) }}
+                    </a>
+                </li>
+            {% endfor %}
+
+            <li class="heading"><span>{{ 'global.documentation'|t('siteimprove') }}</span></li>
+            <li>
+                <a href="{{ craft.siteimprove.composer.support.docs ?? '#' }}" target="_blank">README on Github &nearr;</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{# ------------------------------- #}
+{# MACROS                          #}
+{# ------------------------------- #}
+
+{% macro badge(site) %}
+    {% set count = 0 %}
+    {% set settings = craft.siteimprove.settings %}
+
+    {% if settings.getEnabled(site.id) %}
+        {% if settings.getToken(site.id) is empty or settings.getSavedCraftVersion(site.id) != craft.app.getInfo().version %}
+            {% set count = count + 1 %}
+        {% endif %}
+    {% endif %}
+
+    {% if count > 0 %}
+        <span class="badge">{{ count }}</span>
+    {% endif %}
+{% endmacro %}

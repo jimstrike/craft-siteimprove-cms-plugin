@@ -1,0 +1,43 @@
+{##
+ # "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ #
+ # Siteimprove data right where you need it.
+ # The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
+ # Thanks to the seamless integration, you are now able to put your Siteimprove results to use where 
+ # they are most valuable - during your content creation and editing process.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) Dhimiter Karalliu
+ #}
+{% extends "siteimprove/_layout.html" %}
+
+{#% do view.registerAssetBundle("jimstrike\\siteimprove\\assets\\TokenFetcherAsset") %#}
+
+{% set title = 'page.settings.title'|t('siteimprove') %}
+
+{% set fullPageForm = true %}
+
+{% set selectedSubnavItem = 'settings' %}
+
+{% block actionButton %}
+    <input type="submit" class="btn submit" value="{{ 'global.save'|t('siteimprove') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>{{ currentSite.name }}</h2>
+    
+    {% include 'siteimprove/_default/includes/site_settings' with { 
+        'site': currentSite, 
+        'plugin': plugin,
+    } %}
+
+    <hr>
+
+    &lrtri;
+    <p>
+        {{ 'page.settings.footnote'|t('siteimprove', {
+            'plugin.name': plugin.name,
+            'siteimprove.url': '<a href="https://www.siteimprove.com" target="_blank">www.siteimprove.com &nearr;</a>'
+        })|raw }}
+    </p>
+{% endblock %}

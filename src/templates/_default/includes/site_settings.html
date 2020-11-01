@@ -1,0 +1,125 @@
+{##
+ # "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ #
+ # Siteimprove data right where you need it.
+ # The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
+ # Thanks to the seamless integration, you are now able to put your Siteimprove results to use where 
+ # they are most valuable - during your content creation and editing process.
+ #
+ # @link      https://github.com/jimstrike
+ # @copyright Copyright (c) Dhimiter Karalliu
+ #}
+{% import "_includes/forms" as forms %}
+
+{% set settings = plugin.settings %}
+
+{# ********************************************************************** #}
+
+{{ actionInput('siteimprove/default/save-settings') }}
+{{ redirectInput('siteimprove/settings?site=' ~ site.handle) }}
+{#{ csrfInput() }#} {# already included by Craft #}
+{{ hiddenInput('siteId', site.id) }}
+{# ------------------------------- #}
+
+{{ hiddenInput('settings[savedCraftVersion]', craft.app.getInfo().version) }}
+
+{# ------------------------------- #}
+
+{{ hiddenInput('settings[token]', settings.getToken(site.id)) }}
+
+{% if settings.getToken(site.id) is empty %}
+    <hr>
+    <p class="warning with-icon">{{ 'settings.token.error.blank'|t('siteimprove') }}</p>
+{% endif %}
+
+{% if settings.getSavedCraftVersion(site.id) != craft.app.getInfo().version %}
+    <hr>
+    <p class="warning with-icon">{{ 'settings.saved_craft_version.warning.mismatch'|t('siteimprove') }}</p>
+{% endif %}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.lightswitchField({
+    label: 'settings.enabled.label'|t('siteimprove', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
+    instructions: 'settings.enabled.instructions'|t('siteimprove', { 'plugin.name' : "<b>#{plugin.name}</b>" }),
+    name: 'settings[enabled]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('enabled', site.id)|trim,
+    on: settings.getEnabled(site.id)
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.lightswitchField({
+    label: 'settings.site_enabled.label'|t('siteimprove', {'plugin.name': "&quot;#{plugin.name}&quot;"}),
+    instructions: 'settings.site_enabled.instructions'|t('siteimprove'),
+    name: 'settings[siteEnabled]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('siteEnabled', site.id)|trim,
+    on: settings.getSiteEnabled(site.id)
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.textField({
+    first: true,
+    label: 'settings.test_base_url.label'|t('siteimprove'),
+    instructions: 'settings.test_base_url.instructions'|t('siteimprove', { 'site.name': site.name, 'site.baseUrl': site.getBaseUrl() }),
+    name: 'settings[testBaseUrl]',
+    value: settings.getTestBaseUrl(site.id),
+    required: false,
+    warning: _self.configWarning('testBaseUrl', site.id)|trim,
+}) }}
+
+<hr>
+
+{# ------------------------------- #}
+
+{{ forms.lightswitchField({
+    label: 'settings.use_test_base_url.label'|t('siteimprove', {'settings.test_base_url.label': 'settings.test_base_url.label'|t('siteimprove')}),
+    instructions: 'settings.use_test_base_url.instructions'|t('siteimprove'),
+    name: 'settings[useTestBaseUrl]',
+    value: 1,
+    required: false,
+    warning: _self.configWarning('useTestBaseUrl', site.id)|trim,
+    on: settings.getUseTestBaseUrl(site.id)
+}) }}
+
+{# ------------------------------- #}
+{# MACROS                          #}
+{# ------------------------------- #}
+
+{% macro configWarning(setting, siteId = null) -%}
+    {%- set config = craft.app.config.getConfigFromFile('siteimprove') -%}
+    {%- if config[siteId][setting] is defined or config[setting] is defined -%}
+        {{- 'settings.config.warning'|t('siteimprove', {
+            'setting': setting,
+            'file': 'config/siteimprove.php'
+        })|raw }}
+    {%- else -%}
+        {{ false }}
+    {%- endif -%}
+{%- endmacro %}
+
+{# ------------------------------- #}
+
+{% macro app_token() %}
+    <section class="si-token-grid">
+        <div>
+            <button type="button" class="btn" data-siteimprove-token-generate="{{ url('siteimprove/json/token/generate') }}">
+                <span>{{ 'global.token.generate_new_token'|t('siteimprove') }}</span>
+                <span style="display: none;">{{ 'global.please_wait'|t('siteimprove') }}...</span>
+                <span style="display: none;">{{ 'global.token.token_generated'|t('siteimprove') }}!</span>
+            </button>
+        </div>
+        <div><input class="text fullwidth" id="si-token-placeholder" readonly></div>
+    </section>
+{% endmacro %}
