@@ -1,15 +1,15 @@
 {
-  "siteimprove/runtime.js": "/cpresources/dist/siteimprove/runtime.js",
-  "siteimprove/siteimprove.js": "/cpresources/dist/siteimprove/siteimprove.js",
   "siteimprove/token_fetcher.css": "/cpresources/dist/siteimprove/token_fetcher.css",
   "siteimprove/token_fetcher.js": "/cpresources/dist/siteimprove/token_fetcher.js",
-  "siteimprove/images/icon.svg": "/cpresources/dist/siteimprove/images/icon.svg",
-  "siteimprove/images/siteimprove01.png": "/cpresources/dist/siteimprove/images/siteimprove01.png",
-  "siteimprove/images/siteimprove02.png": "/cpresources/dist/siteimprove/images/siteimprove02.png",
-  "siteimprove/images/siteimprove03.png": "/cpresources/dist/siteimprove/images/siteimprove03.png",
-  "siteimprove/images/siteimprove04.png": "/cpresources/dist/siteimprove/images/siteimprove04.png",
-  "siteimprove/images/siteimprove05.png": "/cpresources/dist/siteimprove/images/siteimprove05.png",
+  "siteimprove/siteimprove.js": "/cpresources/dist/siteimprove/siteimprove.js",
+  "siteimprove/runtime.js": "/cpresources/dist/siteimprove/runtime.js",
   "siteimprove/images/siteimprove06.png": "/cpresources/dist/siteimprove/images/siteimprove06.png",
   "siteimprove/images/siteimprove07.png": "/cpresources/dist/siteimprove/images/siteimprove07.png",
-  "siteimprove/images/siteimprove08.png": "/cpresources/dist/siteimprove/images/siteimprove08.png"
+  "siteimprove/images/siteimprove08.png": "/cpresources/dist/siteimprove/images/siteimprove08.png",
+  "siteimprove/images/siteimprove03.png": "/cpresources/dist/siteimprove/images/siteimprove03.png",
+  "siteimprove/images/siteimprove05.png": "/cpresources/dist/siteimprove/images/siteimprove05.png",
+  "siteimprove/images/siteimprove02.png": "/cpresources/dist/siteimprove/images/siteimprove02.png",
+  "siteimprove/images/siteimprove04.png": "/cpresources/dist/siteimprove/images/siteimprove04.png",
+  "siteimprove/images/siteimprove01.png": "/cpresources/dist/siteimprove/images/siteimprove01.png",
+  "siteimprove/images/icon.svg": "/cpresources/dist/siteimprove/images/icon.svg"
 }
