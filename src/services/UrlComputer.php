@@ -87,6 +87,12 @@ class UrlComputer extends Component
      */
     public function siteUrl(int $siteId = null): string
     {
+        $element = Craft::$app->getUrlManager()->getMatchedElement();
+
+        if ($element) {
+            return $element->getUrl();
+        }
+        
         if (!$siteId) {
             return Plugin::baseRequestUrlAndFullPath();
         }
