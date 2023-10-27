@@ -1,6 +1,6 @@
 <?php
 /**
- * "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ * "Siteimprove CMS Plugin" plugin for Craft CMS 4.x
  *
  * Siteimprove data right where you need it.
  * The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
@@ -58,19 +58,19 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public $schemaVersion = '1.0.3';
+    public string $schemaVersion = '2.0.0';
 
     /**
      * @inheritdoc
      * @var bool
      */
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * @inheritdoc
      * @var bool
      */
-    public $hasCpSection = true;
+    public bool $hasCpSection = true;
 
     /**
      * @var string
@@ -139,9 +139,9 @@ class Plugin extends \craft\base\Plugin
     /**
      * @inheritdoc
      */
-    public function getSettingsResponse()
+    public function getSettingsResponse(): mixed
     {
-        return Craft::$app->getResponse()->redirect(UrlHelper::cpUrl('siteimprove/settings'));
+        return Craft::$app->getResponse()->redirect(UrlHelper::cpUrl($this->handle . '/settings'));
     }
 
     // Protected Methods
@@ -152,7 +152,7 @@ class Plugin extends \craft\base\Plugin
      * 
      * @return Settings|null
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?craft\base\Model
     {
         $settings = new Settings();
         
@@ -184,7 +184,8 @@ class Plugin extends \craft\base\Plugin
     public static function baseRequestUrlAndFullPath(): string
     {
         //return \yii\helpers\Url::base(true) . Craft::$app->getRequest()->getUrl();
-        return \rtrim(UrlHelper::baseRequestUrl(), '/') . '/' . \ltrim(Craft::$app->getRequest()->getFullPath(), '/');
+        // return \rtrim(UrlHelper::baseRequestUrl(), '/') . '/' . \ltrim(Craft::$app->getRequest()->getFullPath(), '/');
+        return \rtrim(UrlHelper::baseUrl(), '/') . '/' . \ltrim(Craft::$app->getRequest()->getFullPath(), '/');
     }
 
     /**
@@ -206,7 +207,7 @@ class Plugin extends \craft\base\Plugin
     {
         $nsPrefix = self::assetsNsPrefix();
 
-        return Craft::$app->assetManager->getPublishedUrl($nsPrefix, false);
+        return Craft::$app->assetManager->getPublishedUrl($nsPrefix);
     }
 
     /**
