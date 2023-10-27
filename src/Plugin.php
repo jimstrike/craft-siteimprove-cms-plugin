@@ -368,10 +368,13 @@ class Plugin extends \craft\base\Plugin
             UserPermissions::class,
             UserPermissions::EVENT_REGISTER_PERMISSIONS,
             function(RegisterUserPermissionsEvent $event) {
-                $event->permissions[$this->name] = [
-                    'embedSiteimprove' => [
-                        'label' => self::t('permissions.embed'),
-                    ],
+                $event->permissions[] = [
+                    'heading' => $this->name,
+                    'permissions' => [
+                        'embedSiteimprove' => [
+                            'label' => self::t('permissions.embed'),
+                        ],
+                    ]
                 ];
             }
         );
