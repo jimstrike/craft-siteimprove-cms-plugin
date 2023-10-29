@@ -1,6 +1,6 @@
 <?php
 /**
- * "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ * "Siteimprove CMS Plugin" plugin for Craft CMS 4.x
  *
  * Siteimprove data right where you need it.
  * The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
@@ -37,12 +37,12 @@ class DefaultController extends BaseController
      * @var bool|array Allows anonymous access to this controller's actions.
      * @access protected
      */
-    protected $allowAnonymous = false;
+    protected array|int|bool $allowAnonymous = false;
 
     // Public Methods
     // =========================================================================
 
-    public function init()
+    public function init(): void
     {
         parent::init();
     }

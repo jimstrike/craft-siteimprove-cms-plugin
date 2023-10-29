@@ -1,6 +1,6 @@
 <?php
 /**
- * "Siteimprove CMS Plugin" plugin for Craft CMS 3.x
+ * "Siteimprove CMS Plugin" plugin for Craft CMS 4.x
  *
  * Siteimprove data right where you need it.
  * The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
@@ -13,6 +13,9 @@
 
 namespace jimstrike\siteimprove\twigextensions;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 use Craft;
 use jimstrike\siteimprove\Plugin;
 
@@ -21,7 +24,7 @@ use jimstrike\siteimprove\Plugin;
  * @package Siteimprove CMS Plugin
  * @since   1.0.0
  */
-class TwigExtension extends \Twig_Extension
+class TwigExtension extends AbstractExtension
 {
     // Public Methods
     // =========================================================================
@@ -44,7 +47,7 @@ class TwigExtension extends \Twig_Extension
     public function getFilters(): array
     {
         return [
-            new \Twig_SimpleFilter(Plugin::$plugin->handle . '_is_numeric', function($value) { 
+            new TwigFilter(Plugin::$plugin->handle . '_is_numeric', function($value) { 
                 return  \is_numeric($value); 
             }),
         ];
@@ -58,7 +61,7 @@ class TwigExtension extends \Twig_Extension
     public function getFunctions(): array
     {
         return [
-            new \Twig_SimpleFunction(Plugin::$plugin->handle . '_asset', [$this, 'assetFunction']),
+            new TwigFunction(Plugin::$plugin->handle . '_asset', [$this, 'assetFunction']),
         ];
     }
 

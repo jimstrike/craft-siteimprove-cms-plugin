@@ -1,5 +1,11 @@
 # Release Notes for "Siteimprove CMS Plugin" plugin
 
+## 2.0.0 - 2023-10-29
+
+### Changed
+
+- Updated plugin for Craft 4.
+
 ## 1.0.3 - 2021-07-18
 
 ### Changed
