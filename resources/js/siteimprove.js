@@ -1,5 +1,5 @@
 /**
- * Siteimprove CMS Plugin plugin for Craft CMS 3.x
+ * Siteimprove CMS Plugin plugin for Craft CMS 4.x
  *
  * Siteimprove data right where you need it.
  * The Siteimprove plugin bridges the gap between Craft CMS and the Siteimprove Intelligence Platform. 
