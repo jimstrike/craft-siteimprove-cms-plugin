@@ -1,4 +1,4 @@
-# "Siteimprove CMS Plugin" plugin for Craft CMS 4.x
+# "Siteimprove CMS Plugin" plugin for Craft CMS 4.x|5.x
 
 Siteimprove data right where you need it.
 
@@ -29,7 +29,7 @@ For more information visit: [www.siteimprove.com](https://www.siteimprove.com/)
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0 or later.
+This plugin requires Craft CMS 4.0.0|5.0.0 or later.
 
 In order to use the Siteimprove CMS plugin, you will need to be a Siteimprove customer. Not a customer yet? Have a look: [www.siteimprove.com](https://www.siteimprove.com/)
 
