@@ -91,7 +91,7 @@ const SiteimproveUI = function() {
 
     // Init siteimprove
     function init() {
-        let src = plugin.script || 'https://cdn.siteimprove.net/cms/overlay.js';
+        let src = plugin.script || 'https://cdn.siteimprove.net/cms/overlay-latest.js';
         
         addScript(src, function() {
             
