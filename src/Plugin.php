@@ -57,7 +57,7 @@ class Plugin extends \craft\base\Plugin
      * @inheritdoc
      * @var string
      */
-    public string $schemaVersion = '2.1.0';
+    public string $schemaVersion = '2.1.1';
 
     /**
      * @inheritdoc
@@ -79,7 +79,7 @@ class Plugin extends \craft\base\Plugin
     /**
      * @var string
      */
-    const SCRIPT_OVERLAY = 'https://cdn.siteimprove.net/cms/overlay.js';
+    const SCRIPT_OVERLAY = 'https://cdn.siteimprove.net/cms/overlay-latest.js';
 
     /**
      * @inheritdoc

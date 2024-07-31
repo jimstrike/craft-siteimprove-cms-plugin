@@ -1,5 +1,12 @@
 # Release Notes for "Siteimprove CMS Plugin" plugin
 
+## 2.1.1 - 2024-08-01
+
+### Changed
+
+- Updated Siteimprove overlay script to use latest.
+- Updated CP icons.
+
 ## 2.1.0 - 2024-06-16
 
 ### Changed
