@@ -1,5 +1,13 @@
 # Release Notes for "Siteimprove CMS Plugin" plugin
 
+## 2.1.2 - 2024-08-01
+
+### Changed
+
+- Updated screenshots and readme.
+
+## 2.1.0 - 2024-06-16
+
 ## 2.1.1 - 2024-08-01
 
 ### Changed

@@ -94,3 +94,4 @@ composer require jimstrike/siteimprove-cms-plugin:1.0.3
 ![Screenshot](resources/images/siteimprove06.png)
 ![Screenshot](resources/images/siteimprove07.png)
 ![Screenshot](resources/images/siteimprove08.png)
+![Screenshot](resources/images/siteimprove09.png)
