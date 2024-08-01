@@ -12,8 +12,6 @@
 
 - Updated screenshots and readme.
 
-## 2.1.0 - 2024-06-16
-
 ## 2.1.1 - 2024-08-01
 
 ### Changed
